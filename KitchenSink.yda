@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module DBSchema="Primary" DBVersion="2.50">
+<Module DBSchema="Primary" DBVersion="2.51">
   <Parameters>
     <Parameter>
       <Name>p1</Name>
@@ -81,6 +81,9 @@
    &lt;/UIViewMaps&gt;
 &lt;/PMP&gt;</User>
     <UserExtensions></UserExtensions>
+    <LastAppVersion>25.8.29</LastAppVersion>
+    <LastModifiedBy>onur.bekmen@analog.com</LastModifiedBy>
+    <LastModifiedTime>2025-10-01T12:03:07Z</LastModifiedTime>
     <GeneratorOptions></GeneratorOptions>
     <Dictionary>Labview</Dictionary>
     <VariantContext>Generic</VariantContext>
@@ -1091,7 +1094,7 @@ U6</User>
         <UIIncrement>1</UIIncrement>
         <UIPolarity>ActiveHigh</UIPolarity>
         <User></User>
-        <Width>2</Width>
+        <Width>1</Width>
         <EnumElements>
           <EnumElement>
             <Name>ENUM000</Name>
@@ -1121,40 +1124,12 @@ U6</User>
             <Value>1</Value>
             <Visibility>Public</Visibility>
           </EnumElement>
-          <EnumElement>
-            <Name>ENUM002</Name>
-            <UID>54f45b470dd464d2a203d866543495fb257ccf5c</UID>
-            <Description>Some Enum Description.</Description>
-            <Documentation></Documentation>
-            <Exists>True</Exists>
-            <Notes></Notes>
-            <UINotes></UINotes>
-            <UIToolTip>=__AUTO__</UIToolTip>
-            <UIUIValue></UIUIValue>
-            <User></User>
-            <Value>10</Value>
-            <Visibility>Public</Visibility>
-          </EnumElement>
-          <EnumElement>
-            <Name>ENUM003</Name>
-            <UID>9f8f6c34b96b36fed13cfbd2062e2f63a21c00c0</UID>
-            <Description>Some Enum Description.</Description>
-            <Documentation></Documentation>
-            <Exists>True</Exists>
-            <Notes></Notes>
-            <UINotes></UINotes>
-            <UIToolTip>=__AUTO__</UIToolTip>
-            <UIUIValue></UIUIValue>
-            <User></User>
-            <Value>11</Value>
-            <Visibility>Public</Visibility>
-          </EnumElement>
         </EnumElements>
       </BitField>
       <BitField>
         <Name>BF45</Name>
         <UID>8b07bd1f02934a028aad6e1f4067e274213b228b</UID>
-        <Access>R/W</Access>
+        <Access>R/W1</Access>
         <Bundle></Bundle>
         <DefaultValue>0</DefaultValue>
         <Description>The really really really really really really really really really really long description for bit field 45.</Description>
@@ -1209,7 +1184,7 @@ U6</User>
         <UIIncrement>1</UIIncrement>
         <UIPolarity>ActiveHigh</UIPolarity>
         <User></User>
-        <Width>1</Width>
+        <Width>2</Width>
       </BitField>
       <BitField>
         <Name>BF46</Name>
@@ -1625,15 +1600,15 @@ U6</User>
                 <BitOffset>0</BitOffset>
                 <RegOffset>12</RegOffset>
                 <SecondaryAddress></SecondaryAddress>
-                <SliceWidth>2</SliceWidth>
+                <SliceWidth>1</SliceWidth>
                 <UID>54862ddf458f4755e90d028e5b7f09a3c12bc7e1</UID>
               </BitFieldRef>
               <BitFieldRef>
                 <BF-UID>8b07bd1f02934a028aad6e1f4067e274213b228b</BF-UID>	<!-- Name: BF45 -->
                 <BitOffset>0</BitOffset>
-                <RegOffset>14</RegOffset>
+                <RegOffset>13</RegOffset>
                 <SecondaryAddress></SecondaryAddress>
-                <SliceWidth>1</SliceWidth>
+                <SliceWidth>2</SliceWidth>
                 <UID>5b522aca2c05ad3e621e3e4b2442f6195eab3521</UID>
               </BitFieldRef>
               <BitFieldRef>
