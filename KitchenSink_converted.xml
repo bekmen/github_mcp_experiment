@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module DBSchema="Primary" DBVersion="2.51">
+  <Param Name="p1" Desc="Base address parameter" DefaultValue="0x1000" />
+  <Param Name="p2" Desc="Data width in bits" DefaultValue="32" />
+  <Param Name="p3" Desc="Enable feature flag" DefaultValue="true" />
+  <Param Name="p4" Desc="Mask value" DefaultValue="0xFF" />
+  <Properties>
+    <Property Name="HardwareName" Value="TestChip" />
+    <Property Name="SoftwareName" Value="TestDriver" />
+    <Property Name="Version" Value="1.0" />
+    <Property Name="Date" Value="2024-01-15" />
+    <Property Name="Author" Value="Design Team" />
+    <Property Name="BaseAddress" Value="0x40000000" />
+    <Property Name="AddressWidth" Value="32" />
+    <Property Name="DataWidth" Value="32" />
+    <Property Name="Endianness" Value="little" />
+  </Properties>
+  <PageMasks>
+    <PageMask Name="DefaultPage" Value="0xFFFF0000" />
+  </PageMasks>
+  <MemoryMaps>
+    <MemoryMap Name="MainMap" BaseAddress="0x40000000" Size="0x10000">
+      <BitFields>
+        <BitField Name="STATUS_READY" Description="Ready status bit" StartBit="0" EndBit="0" Access="RO" />
+        <BitField Name="STATUS_ERROR" Description="Error status bit" StartBit="1" EndBit="1" Access="RO" />
+        <BitField Name="CONTROL_ENABLE" Description="Enable control bit" StartBit="0" EndBit="0" Access="RW" />
+        <BitField Name="CONTROL_RESET" Description="Reset control bit" StartBit="1" EndBit="1" Access="RW" />
+        <BitField Name="CONTROL_MODE" Description="Mode control bits" StartBit="2" EndBit="4" Access="RW" />
+        <BitField Name="DATA_VALUE" Description="Data value field" StartBit="0" EndBit="31" Access="RW" />
+        <BitField Name="CONFIG_TIMEOUT" Description="Timeout configuration" StartBit="0" EndBit="15" Access="RW" />
+      </BitFields>
+      <RegisterMaps>
+        <RegisterMap Name="MainRegisterMap">
+          <Register Name="STATUS_REG" Address="0x0000" Description="Status register" Access="RO" />
+          <Register Name="CONTROL_REG" Address="0x0004" Description="Control register" Access="RW" />
+          <Register Name="DATA_REG" Address="0x0008" Description="Data register" Access="RW" />
+          <Register Name="CONFIG_REG" Address="0x000C" Description="Configuration register" Access="RW" />
+          <Register Name="VERSION_REG" Address="0x00FC" Description="Version register" Access="RO" />
+          <Register Name="SCRATCH_REG" Address="0x00F0" Description="Scratch register" Access="RW" />
+        </RegisterMap>
+      </RegisterMaps>
+    </MemoryMap>
+  </MemoryMaps>
+  <FunctionalGroups>
+    <FunctionalGroup Name="StatusGroup" Description="Status related registers">
+      <Register Name="STATUS_REG" />
+      <Register Name="VERSION_REG" />
+    </FunctionalGroup>
+    <FunctionalGroup Name="DataGroup" Description="Data handling registers">
+      <Register Name="DATA_REG" />
+      <Register Name="SCRATCH_REG" />
+    </FunctionalGroup>
+    <FunctionalGroup Name="InfoGroup" Description="Configuration and control">
+      <Register Name="CONTROL_REG" />
+      <Register Name="CONFIG_REG" />
+    </FunctionalGroup>
+  </FunctionalGroups>
+  <Suppressions>
+    <Suppression Type="WARNING" Pattern="unused_register" Description="Suppress unused register warnings" />
+    <Suppression Type="INFO" Pattern="default_value" Description="Suppress default value info messages" />
+  </Suppressions>
+</Module>
